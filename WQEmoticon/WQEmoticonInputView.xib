@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="tVM-fN-mO5" customClass="WQEmoticonInputView" customModule="WQEmoticon" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="253"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="IGa-IY-O1k">
+                    <rect key="frame" x="187.5" y="221" width="0.0" height="0.0"/>
+                </pageControl>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NND-1R-XzB" customClass="WQEmoticonToolbar" customModule="WQEmoticon" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="213" width="375" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="rc0-eM-57m"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="DjS-8Q-0hb">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="c4g-2C-siJ" customClass="WQEmoticonLayout" customModule="WQEmoticon" customModuleProvider="target">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="tVM-fN-mO5" id="T7F-IG-QYe"/>
+                        <outlet property="delegate" destination="tVM-fN-mO5" id="Hw3-hl-EVC"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="DjS-8Q-0hb" secondAttribute="trailing" id="B0S-jF-rpg"/>
+                <constraint firstItem="DjS-8Q-0hb" firstAttribute="top" secondItem="tVM-fN-mO5" secondAttribute="top" id="EAf-Cy-gqS"/>
+                <constraint firstItem="NND-1R-XzB" firstAttribute="top" secondItem="IGa-IY-O1k" secondAttribute="bottom" constant="-8" id="WCL-yZ-Ghv"/>
+                <constraint firstItem="DjS-8Q-0hb" firstAttribute="leading" secondItem="tVM-fN-mO5" secondAttribute="leading" id="YFp-d5-Jd6"/>
+                <constraint firstAttribute="bottom" secondItem="NND-1R-XzB" secondAttribute="bottom" id="b9M-oQ-XbJ"/>
+                <constraint firstItem="NND-1R-XzB" firstAttribute="leading" secondItem="tVM-fN-mO5" secondAttribute="leading" id="dAe-7T-ocx"/>
+                <constraint firstItem="NND-1R-XzB" firstAttribute="top" secondItem="DjS-8Q-0hb" secondAttribute="bottom" id="dq6-Yo-2kV"/>
+                <constraint firstItem="IGa-IY-O1k" firstAttribute="centerX" secondItem="tVM-fN-mO5" secondAttribute="centerX" id="ilf-F9-Lml"/>
+                <constraint firstAttribute="trailing" secondItem="NND-1R-XzB" secondAttribute="trailing" id="lnl-4W-DcZ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionView" destination="DjS-8Q-0hb" id="5Tv-7s-Iuj"/>
+                <outlet property="pageControll" destination="IGa-IY-O1k" id="sSI-1s-y09"/>
+                <outlet property="toolbar" destination="NND-1R-XzB" id="Hkg-nv-M4Z"/>
+            </connections>
+            <point key="canvasLocation" x="14.5" y="54.5"/>
+        </view>
+    </objects>
+</document>
